@@ -30,7 +30,7 @@ def Remove (Usuario:str,Contrasena:str,Usuario_Deleteble:str):
         Database.pop(Usuario_Deleteble)
         Balances.pop(Usuario_Deleteble)
         return
-    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="U no admin")
+    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized account operation")
         
 @app.put("/Modify",status_code=status.HTTP_202_ACCEPTED)
 def Modify (Usuario:str,Contrasena:str,Nueva_Contrasena:str):
